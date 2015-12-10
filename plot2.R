@@ -14,4 +14,9 @@ file_data[,1] = as.Date(file_data[,1], format='%d/%m/%Y')  ##ezzel felülírja a
 
 time = as.POSIXct(paste(as.character(file_data[,1]),as.character(file_data[,2])))   ##karaktert kell készíteni a dátumból ehhez, és hozzákapcsolni az időhöz
 
-plot(time,file_data[,3], type='l', ylab = 'Global Active Power (kilowatts)', xlab = '',)
+
+png(file = 'plot2.png')   ##♦képkészítő, de kell utána egy dev.off parancs, hogy ki is írja a fájlt
+
+plot(time,file_data[,3], type='l', ylab = 'Global Active Power (kilowatts)', xlab = '')
+
+dev.off()
